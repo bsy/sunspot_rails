@@ -49,7 +49,7 @@ module Sunspot #:nodoc:
         # Array:: Collection of ActiveRecord models
         #
         def load_all(ids)
-          @clazz.find(ids.map { |id| id.to_i }, :include => (@include || []))
+          @clazz.find_all_by_id(ids.map { |id| id.to_i }), :include => (@include || []))
         end
       end
     end
